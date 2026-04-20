@@ -3,8 +3,9 @@ import styles from "./Logo.module.css";
 export function Logo() {
   return (
     <a
-      href="https://aaronblum.co"
-      target="_blank"
+      // href="https://aaronblum.co"
+      // target="_blank"
+      href="#top"
       rel="noopener noreferrer"
       className={styles.logo}
       aria-label="Aaron Blum — Code Consultant, portfolio"

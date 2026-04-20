@@ -17,8 +17,6 @@ export function Footer() {
           >
             {about.name}
           </a>
-          {" — "}
-          {about.location}
         </p>
         <div className={styles.links}>
           <a
