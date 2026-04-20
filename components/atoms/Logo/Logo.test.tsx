@@ -3,12 +3,10 @@ import { describe, expect, it } from "vitest";
 import { Logo } from "./Logo";
 
 describe("Logo", () => {
-  it("links out to the portfolio at aaronblum.co with safe external attrs", () => {
+  it("renders a link to the home anchor with an accessible name", () => {
     render(<Logo />);
     const link = screen.getByRole("link", { name: /aaron blum.*code consultant/i });
-    expect(link).toHaveAttribute("href", "https://aaronblum.co");
-    expect(link).toHaveAttribute("target", "_blank");
-    expect(link).toHaveAttribute("rel", expect.stringContaining("noopener"));
+    expect(link).toHaveAttribute("href", "#top");
   });
 
   it("includes both the identifier and the descriptor", () => {

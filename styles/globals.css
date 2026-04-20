@@ -8,6 +8,8 @@
 
 html {
   color-scheme: light dark;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + var(--space-2));
 }
 
 html,

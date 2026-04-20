@@ -8,12 +8,9 @@ vi.mock("next-themes", () => ({
 import { Nav } from "./Nav";
 
 describe("Nav", () => {
-  it("renders the logo linking to the portfolio", () => {
+  it("renders the logo linking to #top", () => {
     render(<Nav />);
-    expect(screen.getByRole("link", { name: /code consultant/i })).toHaveAttribute(
-      "href",
-      "https://aaronblum.co",
-    );
+    expect(screen.getByRole("link", { name: /code consultant/i })).toHaveAttribute("href", "#top");
   });
 
   it("renders anchor links to every section", () => {
