@@ -19,9 +19,9 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Our Lighthouse score went from the 60s to the 90s after Aaron's audit. The report was specific, actionable, and didn't waste a word.",
-    name: "Indie founder",
-    position: "Solo operator, Next.js app",
+      "I vibe coded vibeland.dev solo as a designer. AI got me to launch, Aaron got me to production. He found the landmines I couldn't see, handed me fixes I could execute and left the codebase with guardrails for future me. He audited the whole thing, stripped 4,700 lines and set up the first tests and CI the project had ever had. He's who you want when you've shipped fast and need an AI engineer with a senior pair of eyes.",
+    name: "Ellie",
+    position: "Design Leader & Strategist",
     isPlaceholder: false,
   },
   {
