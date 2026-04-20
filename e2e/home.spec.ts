@@ -1,10 +1,16 @@
 import { expect, test } from "@playwright/test";
 
-const SECTION_IDS = ["top", "audits", "process", "services", "work", "testimonials", "book"];
-const NAV_ANCHORS = ["audits", "process", "services", "work", "book"];
+const SECTION_IDS = ["top", "audits", "services", "work", "testimonials", "book"];
+const NAV_ANCHORS: Array<{ label: string; target: string }> = [
+  { label: "audits", target: "audits" },
+  { label: "services", target: "services" },
+  { label: "work", target: "work" },
+  { label: "testimonials", target: "testimonials" },
+  { label: "schedule", target: "book" },
+];
 
 test.describe("home page", () => {
-  test("renders all nine expected sections (top, 6 content sections, book)", async ({ page }) => {
+  test("renders every expected section anchor", async ({ page }) => {
     await page.goto("/");
     for (const id of SECTION_IDS) {
       await expect(page.locator(`#${id}`)).toBeVisible();
@@ -13,20 +19,19 @@ test.describe("home page", () => {
 
   test("nav anchors point at the correct section ids", async ({ page }) => {
     await page.goto("/");
-    for (const id of NAV_ANCHORS) {
+    for (const { label, target } of NAV_ANCHORS) {
       const link = page.getByRole("navigation", { name: /primary/i }).getByRole("link", {
-        name: new RegExp(`^${id}$`, "i"),
+        name: new RegExp(`^${label}$`, "i"),
       });
-      await expect(link).toHaveAttribute("href", `#${id}`);
+      await expect(link).toHaveAttribute("href", `#${target}`);
     }
   });
 
   test("hero CTAs link to #book and #audits", async ({ page }) => {
     await page.goto("/");
-    await expect(page.getByRole("link", { name: /book a call/i }).first()).toHaveAttribute(
-      "href",
-      "#book",
-    );
+    await expect(
+      page.getByRole("link", { name: /schedule initial audit/i }).first(),
+    ).toHaveAttribute("href", "#book");
     await expect(page.getByRole("link", { name: /what i audit/i })).toHaveAttribute(
       "href",
       "#audits",

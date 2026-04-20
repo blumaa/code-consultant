@@ -4,7 +4,6 @@ import {
   Footer,
   Hero,
   Nav,
-  ProcessSteps,
   ServicesGrid,
   TestimonialGrid,
   WorkList,
@@ -17,7 +16,6 @@ export default function Home() {
       <main>
         <Hero />
         <AuditGrid />
-        <ProcessSteps />
         <ServicesGrid />
         <WorkList />
         <TestimonialGrid />

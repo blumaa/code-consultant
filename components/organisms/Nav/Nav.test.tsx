@@ -8,9 +8,12 @@ vi.mock("next-themes", () => ({
 import { Nav } from "./Nav";
 
 describe("Nav", () => {
-  it("renders the logo linking to #top", () => {
+  it("renders the logo linking to the portfolio", () => {
     render(<Nav />);
-    expect(screen.getByRole("link", { name: /code consultant/i })).toHaveAttribute("href", "#top");
+    expect(screen.getByRole("link", { name: /code consultant/i })).toHaveAttribute(
+      "href",
+      "https://aaronblum.co",
+    );
   });
 
   it("renders anchor links to every section", () => {
@@ -22,15 +25,15 @@ describe("Nav", () => {
       "href",
       "#audits",
     );
-    expect(screen.getByRole("link", { name: /process/i, ...opts })).toHaveAttribute(
-      "href",
-      "#process",
-    );
     expect(screen.getByRole("link", { name: /services/i, ...opts })).toHaveAttribute(
       "href",
       "#services",
     );
-    expect(screen.getByRole("link", { name: /work/i, ...opts })).toHaveAttribute("href", "#work");
+    expect(screen.getByRole("link", { name: /^work$/i, ...opts })).toHaveAttribute("href", "#work");
+    expect(screen.getByRole("link", { name: /testimonials/i, ...opts })).toHaveAttribute(
+      "href",
+      "#testimonials",
+    );
     expect(screen.getByRole("link", { name: /^schedule$/i, ...opts })).toHaveAttribute(
       "href",
       "#book",

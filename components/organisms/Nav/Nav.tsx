@@ -5,9 +5,9 @@ import styles from "./Nav.module.css";
 
 const LINKS = [
   { href: "#audits", label: "Audits" },
-  { href: "#process", label: "Process" },
   { href: "#services", label: "Services" },
   { href: "#work", label: "Work" },
+  { href: "#testimonials", label: "Testimonials" },
   { href: "#book", label: "Schedule" },
 ] as const;
 

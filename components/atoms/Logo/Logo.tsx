@@ -2,7 +2,13 @@ import styles from "./Logo.module.css";
 
 export function Logo() {
   return (
-    <a href="#top" className={styles.logo} aria-label="Aaron Blum — Code Consultant, home">
+    <a
+      href="https://aaronblum.co"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.logo}
+      aria-label="Aaron Blum — Code Consultant, portfolio"
+    >
       <span className={styles.mark}>
         <span className={styles.brace} aria-hidden="true">
           {"{"}
