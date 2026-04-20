@@ -1,0 +1,30 @@
+.text {
+  margin: 0;
+  line-height: var(--lh-body);
+}
+
+.size-xs {
+  font-size: var(--text-xs);
+}
+.size-sm {
+  font-size: var(--text-sm);
+}
+.size-base {
+  font-size: var(--text-base);
+}
+.size-lg {
+  font-size: var(--text-lg);
+}
+.size-xl {
+  font-size: var(--text-xl);
+}
+
+.tone-default {
+  color: var(--color-text);
+}
+.tone-muted {
+  color: var(--color-muted);
+}
+.tone-subtle {
+  color: var(--color-subtle);
+}

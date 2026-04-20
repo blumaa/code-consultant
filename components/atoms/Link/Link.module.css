@@ -1,0 +1,20 @@
+.link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.link:hover {
+  color: var(--color-primary-hover);
+}
+
+.subtle {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.subtle:hover {
+  color: var(--color-text);
+}

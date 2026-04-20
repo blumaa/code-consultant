@@ -1,0 +1,23 @@
+.heading {
+  margin: 0;
+  font-weight: var(--weight-heading);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--letter-heading);
+  color: var(--color-text);
+}
+
+.size-xl {
+  font-size: var(--text-xl);
+}
+.size-2xl {
+  font-size: var(--text-2xl);
+}
+.size-3xl {
+  font-size: var(--text-3xl);
+}
+.size-4xl {
+  font-size: var(--text-4xl);
+}
+.size-5xl {
+  font-size: var(--text-5xl);
+}

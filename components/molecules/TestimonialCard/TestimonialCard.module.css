@@ -1,0 +1,48 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-8);
+  margin: 0;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+
+.badge {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+}
+
+.quote {
+  margin: 0;
+  padding: 0;
+  font-size: var(--text-lg);
+  line-height: var(--lh-body);
+  color: var(--color-text);
+}
+
+.quote p {
+  margin: 0;
+}
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-top: auto;
+}
+
+.name {
+  font-style: normal;
+  font-weight: var(--weight-heading);
+  color: var(--color-text);
+}
+
+.position {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}

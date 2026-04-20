@@ -1,0 +1,53 @@
+.svg {
+  width: 100%;
+  height: auto;
+}
+
+.block {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.rect {
+  fill: var(--color-surface);
+  stroke: var(--color-border);
+  stroke-width: 1;
+  transition:
+    fill var(--dur-base) var(--ease-out),
+    stroke var(--dur-base) var(--ease-out);
+}
+
+.block[data-state="clean"] .rect {
+  fill: var(--color-surface);
+  stroke: var(--color-primary);
+  stroke-width: 1.5;
+}
+
+.filename {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: var(--color-text);
+  dominant-baseline: middle;
+}
+
+.badgeDot {
+  fill: #dc2626;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+.badgeCheck {
+  stroke: var(--color-primary);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+.block[data-state="clean"] .badgeDot {
+  opacity: 0;
+}
+
+.block[data-state="clean"] .badgeCheck {
+  opacity: 1;
+}

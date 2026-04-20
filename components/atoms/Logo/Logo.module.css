@@ -1,0 +1,47 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-heading);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.logo:hover {
+  color: var(--color-primary);
+}
+
+.mark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  color: var(--color-primary);
+  font-size: var(--text-base);
+}
+
+.brace {
+  font-weight: 700;
+}
+
+.name {
+  padding: 0 2px;
+  letter-spacing: -0.01em;
+}
+
+.word {
+  color: var(--color-muted);
+  letter-spacing: -0.01em;
+}
+
+.logo:hover .word {
+  color: var(--color-text);
+}
+
+@media (max-width: 520px) {
+  .word {
+    display: none;
+  }
+}
