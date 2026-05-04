@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 vi.mock("next-themes", () => ({
@@ -15,8 +15,6 @@ describe("Nav", () => {
 
   it("renders anchor links to every section", () => {
     render(<Nav />);
-    // links may be hidden below the tablet breakpoint via CSS; include hidden so the structural
-    // assertion runs independent of viewport
     const opts = { hidden: true } as const;
     expect(screen.getByRole("link", { name: /audits/i, ...opts })).toHaveAttribute(
       "href",
@@ -44,5 +42,27 @@ describe("Nav", () => {
   it("renders the theme toggle", () => {
     render(<Nav />);
     expect(screen.getByRole("button", { name: /toggle theme/i })).toBeInTheDocument();
+  });
+
+  it("renders a hamburger button", () => {
+    render(<Nav />);
+    expect(screen.getByRole("button", { name: /open menu/i })).toBeInTheDocument();
+  });
+
+  it("opens mobile menu when hamburger is clicked", () => {
+    render(<Nav />);
+    const button = screen.getByRole("button", { name: /open menu/i });
+    fireEvent.click(button);
+    const mobileNavs = screen.getAllByRole("navigation", { name: /mobile/i });
+    expect(mobileNavs.length).toBeGreaterThan(0);
+  });
+
+  it("closes mobile menu when a link is clicked", () => {
+    render(<Nav />);
+    fireEvent.click(screen.getByRole("button", { name: /open menu/i }));
+    const mobileNav = screen.getByRole("navigation", { name: /mobile/i });
+    const link = mobileNav.querySelector("a");
+    fireEvent.click(link!);
+    expect(screen.queryByRole("navigation", { name: /mobile/i })).not.toBeInTheDocument();
   });
 });
