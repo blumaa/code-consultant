@@ -22,6 +22,6 @@ export const about: About = {
   email: "blumaa@gmail.com",
   github: "https://github.com/blumaa",
   linkedin: "https://www.linkedin.com/in/aaron-blum-0904/",
-  website: "https://aaronblum.co",
+  website: "https://aaronblum.pro",
   calendlyUrl: "https://calendly.com/blumaa",
 };

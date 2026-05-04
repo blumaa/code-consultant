@@ -1,0 +1,1 @@
+export { RubricDownloads } from "./RubricDownloads";

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { about } from "../about";
 import { audits } from "../audits";
+import { rubrics } from "../rubrics";
 import { services } from "../services";
 import { testimonials } from "../testimonials";
 import { work } from "../work";
@@ -72,6 +73,56 @@ describe("content/work", () => {
       expect(w.description).toBeTruthy();
       expect(w.href).toMatch(/^https?:\/\//);
       expect(Array.isArray(w.tags)).toBe(true);
+    }
+  });
+});
+
+describe("content/rubrics", () => {
+  it("exports exactly 6 rubrics", () => {
+    expect(rubrics).toHaveLength(6);
+  });
+
+  it("every slug is URL-safe", () => {
+    for (const r of rubrics) {
+      expect(r.slug).toMatch(/^[a-z0-9-]+$/);
+    }
+  });
+
+  it("no duplicate slugs", () => {
+    const slugs = rubrics.map((r) => r.slug);
+    expect(new Set(slugs).size).toBe(slugs.length);
+  });
+
+  it("every auditTitle matches an entry in audits", () => {
+    const auditTitles = new Set(audits.map((a) => a.title));
+    for (const r of rubrics) {
+      expect(auditTitles.has(r.auditTitle)).toBe(true);
+    }
+  });
+
+  it("every criterion has exactly 5 levels numbered 1–5", () => {
+    for (const r of rubrics) {
+      for (const c of r.criteria) {
+        expect(c.levels).toHaveLength(5);
+        expect(c.levels.map((l) => l.level)).toEqual([1, 2, 3, 4, 5]);
+      }
+    }
+  });
+
+  it("all level descriptions are non-empty strings", () => {
+    for (const r of rubrics) {
+      for (const c of r.criteria) {
+        for (const l of c.levels) {
+          expect(typeof l.description).toBe("string");
+          expect(l.description.length).toBeGreaterThan(0);
+        }
+      }
+    }
+  });
+
+  it("every rubric has at least 3 criteria", () => {
+    for (const r of rubrics) {
+      expect(r.criteria.length).toBeGreaterThanOrEqual(3);
     }
   });
 });

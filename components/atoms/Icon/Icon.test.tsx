@@ -24,6 +24,7 @@ describe("Icon", () => {
     "sun",
     "moon",
     "external",
+    "download",
   ] as const)("knows the %s icon", (name) => {
     const { container } = render(<Icon name={name} />);
     expect(container.querySelector("svg")).not.toBeNull();

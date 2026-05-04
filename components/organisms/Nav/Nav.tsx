@@ -5,6 +5,7 @@ import styles from "./Nav.module.css";
 
 const LINKS = [
   { href: "#audits", label: "Audits" },
+  { href: "#rubrics", label: "Rubrics" },
   { href: "#services", label: "Services" },
   { href: "#work", label: "Work" },
   { href: "#testimonials", label: "Testimonials" },

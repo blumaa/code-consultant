@@ -24,9 +24,9 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.portfolioLink}
-            aria-label="Aaron's portfolio at aaronblum.co"
+            aria-label="Aaron's portfolio at aaronblum.pro"
           >
-            aaronblum.co
+            aaronblum.pro
             <Icon name="external" size={12} />
           </a>
           <a href={`mailto:${about.email}`} className={styles.iconLink} aria-label="Email Aaron">

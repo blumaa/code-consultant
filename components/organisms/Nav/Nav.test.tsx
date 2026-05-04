@@ -22,6 +22,10 @@ describe("Nav", () => {
       "href",
       "#audits",
     );
+    expect(screen.getByRole("link", { name: /rubrics/i, ...opts })).toHaveAttribute(
+      "href",
+      "#rubrics",
+    );
     expect(screen.getByRole("link", { name: /services/i, ...opts })).toHaveAttribute(
       "href",
       "#services",

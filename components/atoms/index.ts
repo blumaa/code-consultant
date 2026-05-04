@@ -1,5 +1,6 @@
 export { Button } from "./Button";
 export { Divider } from "./Divider";
+export { DownloadLink } from "./DownloadLink";
 export { Heading } from "./Heading";
 export { Icon, type IconName } from "./Icon";
 export { Link } from "./Link";

@@ -3,6 +3,7 @@ export { CalendlyEmbed } from "./CalendlyEmbed";
 export { Footer } from "./Footer";
 export { Hero } from "./Hero";
 export { Nav } from "./Nav";
+export { RubricDownloads } from "./RubricDownloads";
 export { ServicesGrid } from "./ServicesGrid";
 export { TestimonialGrid } from "./TestimonialGrid";
 export { WorkList } from "./WorkList";

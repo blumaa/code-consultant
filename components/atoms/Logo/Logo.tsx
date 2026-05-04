@@ -3,7 +3,7 @@ import styles from "./Logo.module.css";
 export function Logo() {
   return (
     <a
-      // href="https://aaronblum.co"
+      // href="https://aaronblum.pro"
       // target="_blank"
       href="#top"
       rel="noopener noreferrer"

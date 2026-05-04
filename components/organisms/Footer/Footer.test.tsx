@@ -26,10 +26,10 @@ describe("Footer", () => {
     expect(screen.getByText(new RegExp(String(year)))).toBeInTheDocument();
   });
 
-  it("renders a link to the personal portfolio at aaronblum.co", () => {
+  it("renders a link to the personal portfolio at aaronblum.pro", () => {
     render(<Footer />);
     const link = screen.getByRole("link", { name: /aaronblum\.co|portfolio/i });
-    expect(link).toHaveAttribute("href", expect.stringContaining("aaronblum.co"));
+    expect(link).toHaveAttribute("href", expect.stringContaining("aaronblum.pro"));
     expect(link).toHaveAttribute("target", "_blank");
   });
 });
