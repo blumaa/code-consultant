@@ -12,7 +12,7 @@ export const services: Service[] = [
     title: "Code Audit",
     description:
       "I read your codebase carefully and write you a prioritized report: bugs, performance, security, UX, design system, architecture. Every finding ships with a fix recipe.",
-    price: "negotiable",
+    price: "cost: negotiable",
     bullets: [
       "Written report with severity ratings",
       "Fix recipes for every finding",
@@ -26,7 +26,7 @@ export const services: Service[] = [
     title: "Ongoing Retainer",
     description:
       "A monthly engagement for teams who want a steady pair of senior eyes on their codebase without hiring full-time.",
-    price: "negotiable",
+    price: "cost: negotiable",
     bullets: [
       "Recurring audits as new code ships",
       "Async Slack / Discord support",
